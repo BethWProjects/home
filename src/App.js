@@ -1,5 +1,6 @@
 import './index.css';
 import { useState } from 'react';
+import Joke from './Joke';
 
 function App() {
 
@@ -19,13 +20,13 @@ function App() {
   //interpolate the google url with a query assigned to the userQuery state value
   //assign the userQuery value to the 'q' parameter 
   //assing a second argument '_blank' telling the browser to open a new tab
-  //activate that value in the onClick attribute in the return statement
+  //call that value in the onClick attribute in the return statement
   const searchQuery = () => {
     window.open(`https://google.com/search?q=${userQuery}`, '_blank')
   }
 
   //create a function to register a click upon clicking the return/enter key...NOTE: "Enter" is the value it must strictly equal
-  //assign an attribute in the input tag to activate the function
+  //assign an attribute in the input tag to call the function
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       searchQuery()
@@ -42,6 +43,8 @@ function App() {
           onKeyPress={handleKeyPress} />
         <button onClick={searchQuery}>Search</button>
       </div>
+      <hr />
+      <Joke />
     </div>
   );
 }
