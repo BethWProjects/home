@@ -1,6 +1,7 @@
 import './index.css';
 import { useState } from 'react';
 import Joke from './Joke';
+import Stories from './Stories';
 
 function App() {
 
@@ -45,6 +46,8 @@ function App() {
       </div>
       <hr />
       <Joke />
+      <hr />
+      <Stories />
     </div>
   );
 }
