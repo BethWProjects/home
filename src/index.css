@@ -36,6 +36,26 @@ button {
   height: 25px;
 }
 
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 225px;
+  height: 400px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px grey;
+  position: relative;
+  background-color: white;
+  overflow: auto;
+  align-items: center;
+}
+
 .Gallery {
   margin: 10px;
 }

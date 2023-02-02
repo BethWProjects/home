@@ -2,6 +2,8 @@ import './index.css';
 import { useState } from 'react';
 import Joke from './Joke';
 import Stories from './Stories';
+import JokeWithCustomHook from './JokeWithCustomHook';
+import StoriesWithCustomHook from './StoriesWithCustomHook';
 
 function App() {
 
@@ -36,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello Beth</h1>
+      <h1>Hello, enter data to search Google</h1>
       <div className='form'>
         <input 
           value={userQuery} 
@@ -47,7 +49,11 @@ function App() {
       <hr />
       <Joke />
       <hr />
+      <JokeWithCustomHook />
+      <hr />
       <Stories />
+      <hr />
+      <StoriesWithCustomHook />
     </div>
   );
 }
