@@ -4,6 +4,7 @@ import Joke from './Joke';
 import Stories from './Stories';
 import JokeWithCustomHook from './JokeWithCustomHook';
 import StoriesWithCustomHook from './StoriesWithCustomHook';
+import Tasks from './Tasks';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
   //capture the value in the input tag in the return statement,
   //activate that value within the onChange attribute in the return statement
   const updateUserQuery = event => {
+    // console.log('userQuery', userQuery)
     setUserQuery(event.target.value)
   }
 
@@ -50,6 +52,8 @@ function App() {
       <Joke />
       <hr />
       <JokeWithCustomHook />
+      <hr />
+      <Tasks />
       <hr />
       <Stories />
       <hr />

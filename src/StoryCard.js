@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Card({by, score, title, kids}) {
+function Card({by, score, title, kids, url}) {
     return(
         <div>
             <div className='card'>

@@ -17,7 +17,7 @@ function Stories() {
     const storyData = story.map((s) => {
         return(
             <Card 
-                key={s.score}
+                key={s.id}
                 by={s.by}
                 score={s.score}
                 title={s.title}

@@ -9,8 +9,8 @@ function StoriesWithCustomHook() {
         <div className='stories'>
             <h3>Stories</h3>
             {
-                story.map(s => {
-                    const {id, by, time, title, url} = s;
+                story.map(story => {
+                    const {id, by, time, title, url} = story;
 
                     return(
                         <div key={id}>
