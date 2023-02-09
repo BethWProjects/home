@@ -18,6 +18,17 @@ function Tasks() {
 
     console.log('tasks', tasks)
 
+    const completeTask = (completedTask) => () => { //have completeTask return a function reference itself.  using a double arrow syntax will turn this into a complete function on the completeTask function when calling completedTask.  this avoids an infinite loop
+        setCompletedTasks([...completedTasks, completedTask]) //add completeTask to the completedTasks array
+        setTasks(tasks.filter(task => task.id !== completedTask.id))  //filter over all tasks to remove the completed task by removing the task.id that does not match the completeTask.id, to remove the task.  this will only include tasks that don't match completed tasks
+    }
+
+    console.log('completed tasks', completedTasks)
+
+    const deleteTask = (task) => () => {
+        setCompletedTasks(completedTasks.filter(t => t.id !== task.id))
+    }
+
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             addTask()
@@ -39,7 +50,25 @@ function Tasks() {
             {
                 tasks.map(task => {
                     const {id, taskText } = task  //destructure the task to now included the id as the key and the taskText as the displayed value
-                    return <div key={id}>{taskText}</div>
+                    return (
+                         <div key={id} onClick={completeTask(task)}>
+                            {taskText}
+                            </div>
+                    )
+                })
+            }
+        </div>
+        <div className="completed-list"> 
+            <p>Completed List</p>
+            {
+                completedTasks.map(task => {
+                    const { id, taskText } = task
+                    return (
+                        <div key={id}>
+                            {taskText}
+                            <span onClick={deleteTask(task)} className="delete-task">x</span>
+                        </div>
+                    )
                 })
             }
         </div>
