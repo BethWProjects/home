@@ -81,14 +81,14 @@ function Tasks() {
             }
         </div>
         <div className="completed-list"> 
-            <p>Completed List</p>
+            <p className="completed-list-title">Completed List</p>
             {
                 completedTasks.map(task => {
                     const { id, taskText } = task
                     return (
                         <div key={id}>
                             {taskText}
-                            <span onClick={deleteTask(task)} className="delete-task">x</span>
+                            <span onClick={deleteTask(task)} className="delete-task"> X</span>
                         </div>
                     )
                 })

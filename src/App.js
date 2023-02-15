@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello, enter data to search Google</h1>
+      <h1>Hello, Test User - Search Google here</h1>
       <div className='form'>
         <input 
           value={userQuery} 

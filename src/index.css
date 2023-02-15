@@ -93,8 +93,14 @@ button {
   color: grey;
 }
 
+.completed-list-title {
+  color:rgb(197, 83, 83);
+  margin-bottom: 5px;
+}
+
 .delete-task {
-  color: black;
+  color: rgb(199, 25, 25);
+  font-weight: 700;
   cursor: pointer;
 }
 
