@@ -5,11 +5,13 @@ import Stories from './Stories';
 import JokeWithCustomHook from './JokeWithCustomHook';
 import StoriesWithCustomHook from './StoriesWithCustomHook';
 import Tasks from './Tasks';
+import Gallery from './Gallery';
 
 function App() {
 
   //set the useState array
   const [userQuery, setUserQuery] = useState('')
+  const [showGallery, setShowGallery] = useState(true);  //a new piece of state set as a boolean to show gallery or not
 
   //create a function to update the query and set state (this function will go within the onChange attribute, so event target is provided, use this event as an argument in function)
   //event.target.value is the value the user enters into the field
@@ -28,6 +30,11 @@ function App() {
   //call that value in the onClick attribute in the return statement
   const searchQuery = () => {
     window.open(`https://google.com/search?q=${userQuery}`, '_blank')
+  }
+
+  //create a helper method that can flip the gallery boolean 
+  const toggleShowGallery = () => {
+    setShowGallery(!showGallery)  //set showGallery to the opposite of what the current boolean is (true/false), this allows us to add a button to hide/show the gallery
   }
 
   //create a function to register a click upon clicking the return/enter key...NOTE: "Enter" is the value it must strictly equal
@@ -54,6 +61,15 @@ function App() {
       <JokeWithCustomHook />
       <hr />
       <Tasks />
+      <hr />
+      <div>
+        {
+          showGallery ? <Gallery /> : null
+        }
+        <button onClick={toggleShowGallery}>
+          {showGallery ? 'Hide' : 'Show'} Gallery
+        </button>
+      </div>
       <hr />
       <Stories />
       <hr />

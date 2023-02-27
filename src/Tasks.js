@@ -9,7 +9,7 @@ function Tasks() {
     const storeTasks = (taskMap) => { //we will pass in the hook params when calling the method below
         localStorage.setItem(
             TASKS_STORAGE_KEY, //global key is the first argument to the localStorage object
-            JSON.stringify(taskMap)  //what we want to store, this needs to be converted to a string 
+            JSON.stringify(taskMap)  //data what we want to store, this needs to be converted to a string 
         )
     }
 
@@ -38,7 +38,7 @@ function Tasks() {
         setTasks([...tasks, { taskText, id: uuid()} ]) //the taskText now has a unique id created using the uuid function imported, so include this in an object and add the id key with the value of uuid()
     }
 
-    console.log('tasks', tasks)
+    // console.log('tasks', tasks)
 
     const completeTask = (completedT) => () => { //have completeTask return a function reference itself.  using a double arrow syntax will turn this into a complete function on the completeTask function when calling completedTask.  this avoids an infinite loop
         setCompletedTasks([...completedTasks, completedT]) //add completeTask to the completedTasks array
