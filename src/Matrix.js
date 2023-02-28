@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import MATRIX_FRAMES from './data/matrix';
 
+//display Matrix images based on it's index position, set to a hardcoded interval
+
 function Matrix() {
     const [index, setIndex] = useState(0);
 
@@ -10,7 +12,7 @@ function Matrix() {
                 setIndex(storedIndex => {
                     return (storedIndex + 1) % MATRIX_FRAMES.length
                 })
-            }, 700);
+            }, 1000);
     }, []);
 
     return(

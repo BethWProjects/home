@@ -59,17 +59,3 @@ function Gallery() {
 }
 
 export default Gallery
-
-
-   //this useEffect is the hardcoded example:
-    // useEffect(() => {
-    //     const interval = setInterval(() => {  
-    //         setIndex(storedIndex => {
-    //             return (storedIndex + 1) % PICTURES.length     //forces useEffect to update and return the new value being stored with the state, by using another callback function within the setIndex function
-    //             })     
-    //     }, 3000)
-
-    //     return () => {  //clean up code to run when a component is unmounting/leaving the dom. running this code when hiding the gallery in the app.js file to avoid a memory leak.  this will kill the queued setInterval
-    //         clearInterval(interval)  //interval is the unique id
-    //     }
-    // }, [])
