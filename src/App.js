@@ -6,6 +6,8 @@ import JokeWithCustomHook from './JokeWithCustomHook';
 import StoriesWithCustomHook from './StoriesWithCustomHook';
 import Tasks from './Tasks';
 import Gallery from './Gallery';
+import Matrix from './Matrix';
+import MatrixDynamicInput from './MatrixDynamicInput';
 
 function App() {
 
@@ -70,6 +72,10 @@ function App() {
           {showGallery ? 'Hide' : 'Show'} Gallery
         </button>
       </div>
+      <hr />
+      <Matrix />
+      <hr />
+      <MatrixDynamicInput />
       <hr />
       <Stories />
       <hr />
