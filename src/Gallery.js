@@ -4,6 +4,7 @@ import PICTURES from './data/pictures'
 //display a picture on display based on it's index
 
 const SECONDS = 1000; //constant assigned to millisecond multiple
+const minimumDelay = 1 * SECONDS; //constant to keep the minimum to 1, so when a user changes the delay number it doesn't reset to 0 and cause a glitch
 
 function Gallery() {
     const [index, setIndex] = useState(0);
@@ -20,23 +21,27 @@ function Gallery() {
             setIndex(storedIndex => {
                 return (storedIndex + 1) % PICTURES.length     //forces useEffect to update and return the new value being stored with the state, by using another callback function within the setIndex function
                 })     
-        }, 3 * SECONDS)
+        }, delay) // we want it to rerun when the delay changes, so change to delay hook vs 3000
 
         return () => {  //clean up code to run when a component is unmounting/leaving the dom. running this code when hiding the gallery in the app.js file to avoid a memory leak.  this will kill the queued setInterval
             clearInterval(interval)  //interval is the unique id
         }
-    }, [])
+    }, [delay]) //[] triggers one render of useEffect, we want it to rerun when the delay changes to insert the delay hook into array
     
     const updateDelay = event => {
-        setDelay(Number(event.target.value) * SECONDS); //convert target string to a number on input and then multiply by 1000 to update to milliseconds conversion
+        let delay = Number(event.target.value) * SECONDS; // the value of delay when entered.  Convert target string to a number on input and then multiply by 1000 to update to milliseconds conversion
+        setDelay(delay < minimumDelay ? minimumDelay : delay ); // use a ternary to trigger a minimum of 1, to avoid glitch '0' value when updating number, blocking the user from going below the minimum
     }
 
     return (
         <div className="Gallery">
-            <img src={PICTURES[index].image} alt='gallery' />
+            <img src={PICTURES[index].image} 
+            alt='gallery' 
+            />
             <div className="multiform">
-                Gallery transition delay (seconds): 
-                <input type="number" onChange={updateDelay}/>
+                <div>
+                Gallery transition delay (seconds): <input type="number" onChange={updateDelay}/>
+                </div>
             </div>
         </div>
     )
