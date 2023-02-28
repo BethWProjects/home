@@ -8,6 +8,7 @@ import Tasks from './Tasks';
 import Gallery from './Gallery';
 import Matrix from './Matrix';
 import MatrixDynamicInput from './MatrixDynamicInput';
+import GalleryWithCustomHook from './GalleryWithCustomHook';
 
 function App() {
 
@@ -68,6 +69,14 @@ function App() {
         {
           showGallery ? <Gallery /> : null
         }
+        <button onClick={toggleShowGallery}>
+          {showGallery ? 'Hide' : 'Show'} Gallery
+        </button>
+      </div>
+      <hr />
+      <div>
+        Gallery With Custom Hook
+        { showGallery ? <GalleryWithCustomHook /> : null}
         <button onClick={toggleShowGallery}>
           {showGallery ? 'Hide' : 'Show'} Gallery
         </button>
