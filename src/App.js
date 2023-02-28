@@ -9,6 +9,7 @@ import Gallery from './Gallery';
 import Matrix from './Matrix';
 import MatrixDynamicInput from './MatrixDynamicInput';
 import GalleryWithCustomHook from './GalleryWithCustomHook';
+import MatrixWithCustomHook from './MatrixWithCustomHook';
 
 function App() {
 
@@ -85,6 +86,8 @@ function App() {
       <Matrix />
       <hr />
       <MatrixDynamicInput />
+      <hr />
+      <MatrixWithCustomHook /> 
       <hr />
       <Stories />
       <hr />

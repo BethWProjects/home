@@ -14,7 +14,7 @@ function GalleryWithCustomHook() {
 
     const index = useDynamicTransition({
         delay, increment, length: PICTURES.length
-    });  //call the custom hook with the matching params
+    });  //the custom hook with the matching params that defines the index
     
     const updateDelay = event => {
         let delay = Number(event.target.value) * SECONDS; 
