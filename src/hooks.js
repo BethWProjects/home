@@ -21,6 +21,10 @@ useEffect(() => {
 
 }
 
+//create custom hook by
+//1: isolate unique differences and make them parameters (ie increment, delay, length)
+//2: figure out end result of the hooks based logic (what values are changing?), leading you to
+//3: return the values that are changing as the result of the hook (ie the index in this example below).  This can also be mulitiple values within an array or an object.
 export const useDynamicTransition = ({ increment, delay, length }) => { 
     const [index, setIndex] = useState(0);
 
