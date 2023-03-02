@@ -8,7 +8,7 @@ function Stories() {
         fetch('https://news-proxy-230704.appspot.com/topstories')
             .then(response => response.json())
             .then(json => {
-                console.log(json)
+                // console.log(json)
                 setStory(json)
             })
     }, []);

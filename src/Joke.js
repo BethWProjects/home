@@ -13,7 +13,7 @@ function Joke() {
         //enter the returned json as the parameter to the setJoke state
             .then(response => response.json())
             .then(json => {
-                console.log('joke json', json)
+                // console.log('joke json', json)
                 setJoke(json)
             })
     }, []);

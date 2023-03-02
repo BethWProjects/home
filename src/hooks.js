@@ -12,7 +12,7 @@ useEffect(() => {
     fetch(url)
         .then(response => response.json())
         .then(json => {
-            console.log('json', json)
+            // console.log('json', json)
             setResult(json)
         })
 }, [])

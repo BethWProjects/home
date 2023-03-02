@@ -11,7 +11,7 @@ function MatrixDynamicInput() {
     const [increment, setIncrement] = useState(1);
 
     useEffect(() => {
-        console.log('delay', delay, 'increment', increment)
+        // console.log('delay', delay, 'increment', increment)
         const interval = setInterval(
             () => {
              setIndex(storedIndex => {
@@ -33,7 +33,7 @@ function MatrixDynamicInput() {
         setIncrement(increment < minimumIncrement ? minimumIncrement : increment)
     }
 
-    console.log('delay', delay, 'increment', increment)
+    // console.log('delay', delay, 'increment', increment)
     return (
         <div className='Matrix'>
             <img src={MATRIX_FRAMES[index]} 

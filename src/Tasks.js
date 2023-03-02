@@ -45,7 +45,7 @@ function Tasks() {
         setTasks(tasks.filter(task => task.id !== completedT.id))  //filter over all tasks to remove the completed task by removing the task.id that does not match the completeTask.id, to remove the task.  this will only include tasks that don't match completed tasks
     }
 
-    console.log('completed tasks', completedTasks)
+    // console.log('completed tasks', completedTasks)
 
     const deleteTask = (task) => () => { //using a double arrow syntax function to avoid an infinite loop, because we are calling this immediately. (NOTE: this is the same as adding a callback function in the JSX below, before the function)
         setCompletedTasks(completedTasks.filter(t => t.id !== task.id))

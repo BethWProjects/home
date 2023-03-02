@@ -10,6 +10,7 @@ import Matrix from './Matrix';
 import MatrixDynamicInput from './MatrixDynamicInput';
 import GalleryWithCustomHook from './GalleryWithCustomHook';
 import MatrixWithCustomHook from './MatrixWithCustomHook';
+import TasksRefactoredWithReducer from './TasksRefactoredWithReducer';
 
 function App() {
 
@@ -65,6 +66,8 @@ function App() {
       <JokeWithCustomHook />
       <hr />
       <Tasks />
+      <hr />
+      <TasksRefactoredWithReducer />
       <hr />
       <div>
         {

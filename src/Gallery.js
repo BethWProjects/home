@@ -17,7 +17,7 @@ function Gallery() {
     //SO, we have to use alternative syntax in for the setter function to make sure React always pulls the latest stored value in the internal React engine
     //this useEffect is the dynamic example for users to enter an interval time manually:
     useEffect(() => {
-        console.log('delay', delay, 'increment', increment)
+        // console.log('delay', delay, 'increment', increment)
         const interval = setInterval(() => {  
             setIndex(storedIndex => {
                 return (storedIndex + increment) % PICTURES.length     //forces useEffect to update and return the new value being stored with the state, by using another callback function within the setIndex function.  Added dynamic increment value for input
